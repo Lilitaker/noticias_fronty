@@ -49,30 +49,31 @@ const noticias = [
   },
 ];
 
-/* window.addEventListener("load", function () {
-  let q = (element) => document.querySelector(element);
-  let sectionNacional = q("#nacionales");
-  let sectionInternacional = q("#internacionales");
+// window.addEventListener("load", function () {
+//   let q = (element) => document.querySelector(element);
+//   let sectionNacional = q("#nacionales");
+//   let sectionInternacional = q("#internacionales");
 
-  for (noticia of noticias) {
-    if (noticia.tipoNacional == true) {
-      sectionNacional.innerHTML += `
-    <article>
-      <h3>${noticia.titulo}</h3>
-      <h5>${noticia.fecha}</h5>
-      <img src="${noticia.imgUrl}">
-      <p>${noticia.descripcion}</p>
-    </article>
-    `;
-    } else {
-      sectionInternacional.innerHTML += `
-    <article>
-      <h3>${noticia.titulo}</h3>
-      <h5>${noticia.fecha}</h5>
-      <img src="${noticia.imgUrl}">
-      <p>${noticia.descripcion}</p>
-    </article>
-    `;
-    }
-  }
-}); */
+//   for (let noticia of noticias) {
+//     switch (noticia.tipoNacional) {
+//       case true:
+//         sectionNacional.innerHTML += `
+//               <article class="nacional">
+//               <img src="${noticia.imgUrl}" alt="">
+//               <h2>${noticia.titulo}</h2>
+//               <p>${noticia.fecha}</p>
+//               <p>${noticia.descripcion}</p>
+//               </article>`;
+//         break;
+//       case false:
+//         sectionInternacional.innerHTML += `
+//               <article class="internacional">
+//               <img src="${noticia.imgUrl}" alt="">
+//               <h2>${noticia.titulo}</h2>
+//               <p>${noticia.fecha}</p>
+//               <p>${noticia.descripcion}</p>
+//               </article>`;
+//         break;
+//     }
+//   }
+// });
