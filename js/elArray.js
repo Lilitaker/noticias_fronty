@@ -49,13 +49,13 @@ const noticias = [
   },
 ];
 
-window.addEventListener("load", function () {
+/* window.addEventListener("load", function () {
   let q = (element) => document.querySelector(element);
-  let sectionNacional = q("#nacional");
+  let sectionNacional = q("#nacionales");
   let sectionInternacional = q("#internacionales");
 
   for (noticia of noticias) {
-    if (noticias.tipoNacional == true) {
+    if (noticia.tipoNacional == true) {
       sectionNacional.innerHTML += `
     <article>
       <h3>${noticia.titulo}</h3>
@@ -75,4 +75,4 @@ window.addEventListener("load", function () {
     `;
     }
   }
-});
+}); */
