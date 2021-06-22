@@ -49,31 +49,36 @@ const noticias = [
   },
 ];
 
-// window.addEventListener("load", function () {
-//   let q = (element) => document.querySelector(element);
-//   let sectionNacional = q("#nacionales");
-//   let sectionInternacional = q("#internacionales");
+window.addEventListener("load", function () {
 
-//   for (let noticia of noticias) {
-//     switch (noticia.tipoNacional) {
-//       case true:
-//         sectionNacional.innerHTML += `
-//               <article class="nacional">
-//               <img src="${noticia.imgUrl}" alt="">
-//               <h2>${noticia.titulo}</h2>
-//               <p>${noticia.fecha}</p>
-//               <p>${noticia.descripcion}</p>
-//               </article>`;
-//         break;
-//       case false:
-//         sectionInternacional.innerHTML += `
-//               <article class="internacional">
-//               <img src="${noticia.imgUrl}" alt="">
-//               <h2>${noticia.titulo}</h2>
-//               <p>${noticia.fecha}</p>
-//               <p>${noticia.descripcion}</p>
-//               </article>`;
-//         break;
-//     }
-//   }
-// });
+  let q = (element) => document.querySelector(element);
+  let sectionNacional = q("#nacionales");
+  let sectionInternacional = q("#internacionales");
+
+  for (let noticia of noticias) {
+    switch (noticia.tipoNacional) {
+      case true:
+        sectionNacional.innerHTML += `
+        <article class="nacional">
+        <img src="${noticia.imgUrl}" alt="">
+        <h2>${noticia.titulo}</h2>
+        <p>${noticia.fecha}</p>
+        <p>${noticia.descripcion}</p>
+        </article>`;
+        break;
+      case false:
+        sectionInternacional.innerHTML += `
+        <article class="internacional">
+        <img src="${noticia.imgUrl}" alt="">
+        <h2>${noticia.titulo}</h2>
+        <p>${noticia.fecha}</p>
+        <p>${noticia.descripcion}</p>
+        </article>`;
+        break;
+    }
+  }
+
+  let estilosArticulos = this.document.querySelectorAll("article");
+  estilosArticulos.classList.add("art_renderizado");
+
+});
