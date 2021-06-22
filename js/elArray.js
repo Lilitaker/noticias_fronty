@@ -64,10 +64,8 @@ window.addEventListener("load", () => {
   let sectionInternacional = document.querySelector("#internacional");
 
   noticias.forEach((noticia) => {
-    if (noticia.tipoNacional == true) {
-      sectionNacional.innerHTML += agregarNoticia(noticia);
-    } else if (noticia.tipoNacional == false) {
-      sectionInternacional.innerHTML += agregarNoticia(noticia);
-    }
+    noticia.tipoNacional == true
+      ? (sectionNacional.innerHTML += agregarNoticia(noticia))
+      : (sectionInternacional.innerHTML += agregarNoticia(noticia));
   });
 });
