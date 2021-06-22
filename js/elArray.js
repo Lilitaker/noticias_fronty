@@ -49,36 +49,25 @@ const noticias = [
   },
 ];
 
-window.addEventListener("load", function () {
+let agregarNoticia = function (noticia) {
+  return `<article>
+      <h3>${noticia.titulo}</h3>
+      <h5>${noticia.fecha}</h5>
+      <img src="${noticia.imgUrl}">
+      <p>${noticia.descripcion}</p>
+    </article>
+    `;
+};
 
-  let q = (element) => document.querySelector(element);
-  let sectionNacional = q("#nacionales");
-  let sectionInternacional = q("#internacionales");
+window.addEventListener("load", () => {
+  let sectionNacional = document.querySelector("#nacional");
+  let sectionInternacional = document.querySelector("#internacional");
 
-  for (let noticia of noticias) {
-    switch (noticia.tipoNacional) {
-      case true:
-        sectionNacional.innerHTML += `
-        <article class="nacional">
-        <img src="${noticia.imgUrl}" alt="">
-        <h2>${noticia.titulo}</h2>
-        <p>${noticia.fecha}</p>
-        <p>${noticia.descripcion}</p>
-        </article>`;
-        break;
-      case false:
-        sectionInternacional.innerHTML += `
-        <article class="internacional">
-        <img src="${noticia.imgUrl}" alt="">
-        <h2>${noticia.titulo}</h2>
-        <p>${noticia.fecha}</p>
-        <p>${noticia.descripcion}</p>
-        </article>`;
-        break;
+  noticias.forEach((noticia) => {
+    if (noticia.tipoNacional == true) {
+      sectionNacional.innerHTML += agregarNoticia(noticia);
+    } else if (noticia.tipoNacional == false) {
+      sectionInternacional.innerHTML += agregarNoticia(noticia);
     }
-  }
-
-  let estilosArticulos = this.document.querySelectorAll("article");
-  estilosArticulos.classList.add("art_renderizado");
-
+  });
 });
